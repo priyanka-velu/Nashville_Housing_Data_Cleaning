@@ -1,6 +1,14 @@
 # Cleaning Nashville Housing Data Using SQL
 
+## Project Overview
 Cleaning the Nashville Housing Dataset using Microsoft SQL Server Management Studio
+
+## Resources
+1. Data Source:
+- NashvilleHousing.xlsx
+
+2. Software:
+- Microsoft SQL Server Management Studio
 
 ## Standardize data format
 challenge: not being able to convert it into a date format
