@@ -79,15 +79,15 @@ This project involves cleaning the Nashville Housing Dataset using Microsoft SQL
 - **Method**: Used CASE WHEN statements to convert 'Y' and 'N' values to 'Yes' and 'No' respectively.
 
 ### 6. Remove Duplicates Using CTEs
-- **Code 2**:
+- **Code 1**: Select all columns and row_num by paritioning ParcelID, PropertyAddress, SalePrice, SaleDate, LegalReference and order them by the UniqueID. This allows us to find any duplicates in case if those columns match. 
   ![Remove Duplicates](https://github.com/user-attachments/assets/a3528e36-5229-4ef5-a078-5ad034a312a6)
-- **Code**:
+- **Code 3**: Delete these rows using the DELETE function. 
   ![Example 1](https://github.com/user-attachments/assets/50ba81b8-ecb3-49f7-8931-cc54a73f2f6e)
-- **Code 1**:
+- **Code 2**: We cannot perform WHERE row_num > 1 because the SELECT function is performing the partition function. Therefore we make a CTE to perform WHERE row_num > 1 in order to find any duplicates. We find that there are many duplicates since the row_num > 1.
   ![Example 2](https://github.com/user-attachments/assets/7cbebdca-defb-48b0-9787-4bfa0dd0bde0)
-- **Code 3**:
-  ![Example 3](https://github.com/user-attachments/assets/fd194df8-5abe-43c5-8193-d3678f249e35)
 - **Code ?**:
+  ![Example 3](https://github.com/user-attachments/assets/fd194df8-5abe-43c5-8193-d3678f249e35)
+- **Code 4**: There are no duplicates remaining. 
   ![Example 1](https://github.com/user-attachments/assets/d3af896c-a1a7-469b-a691-be71a15d5bee)
 - **Challenge**: Could not perform row_num > 1 without using Common Table Expressions (CTEs).
 - **Solution**: Partitioned data on unique columns to identify and remove duplicates.
@@ -107,7 +107,7 @@ By following these steps, the Nashville Housing Dataset was thoroughly cleaned a
 ### 2. How can we handle missing property address information to maintain data integrity?
 - **Solution**: By using self-joins to populate missing PropertyAddress values based on matching ParcelID, we ensure that no properties are left with missing address information, maintaining data completeness and integrity.
 
-### 3. How can breaking down addresses into individual components improve our analyses?
+### 3. How can breaking down addresses into individual components improve our analysis?
 - **Solution**: By splitting combined address fields into separate columns for street, city, state, and zip code, we enable more granular and detailed analyses, such as geospatial analysis or demographic studies.
 
 ### 4. How can transforming binary fields enhance data readability and user experience?
